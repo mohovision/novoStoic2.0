@@ -26,3 +26,6 @@ novoStoic2.0: Integrated Pathway Design Tool with Thermodynamic Considerations a
 ## Steps to run streamlit interface locally
 
 run the following on terminal after activating the conda environment `streamlit run Home.py`
+
+## All the codes and data files are also available at:
+https://pennstateoffice365-my.sharepoint.com/:f:/g/personal/vuu10_psu_edu/Eqt5hL8Jde9Et3mbK6leZ5MBcxXPXAnYGZ8ka0kG7Z5AFQ?e=N7sJuc
