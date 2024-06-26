@@ -490,7 +490,7 @@ def optimal_stoic(reactant,product,add_info,min_int_val,max_int_val):
                         metab_detail_dict[id] = extract_det(smiles)
                 novel_mets[id] = smiles
                 try:
-                    novel_mets = parse_novel_molecule(json.loads({id:smiles}))
+                    novel_mets = parse_novel_molecule({id:smiles})
                     #st.write(novel_mets)
                     novel_smiles = parse_novel_smiles(novel_mets)
                     novel_decomposed_r1 = decompse_novel_mets_rad1(novel_smiles)
@@ -501,7 +501,9 @@ def optimal_stoic(reactant,product,add_info,min_int_val,max_int_val):
                     novel_smiles = None
                     novel_decomposed_r1 = None
                     novel_decomposed_r2 = None
-                    
+                    print(f'ERROR: Failed to decompose - {str(e)}')
+                    return
+                
                 dG_values_metanetx[id], st_id = get_dG0(id, pH, I, smiles, loaded_model, molsig_r1, molsig_r2, novel_decomposed_r1, novel_decomposed_r2, novel_mets, met_2_kegg)
                 #id, pH, I, smiles, loaded_model, molsig_r1, molsig_r2, novel_decomposed_r1, novel_decomposed_r2, novel_mets, met_2_kegg
 
